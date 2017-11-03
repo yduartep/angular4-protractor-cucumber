@@ -1,0 +1,120 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "login - We want to test the login process",
+    "line": 1,
+    "id": "login---we-want-to-test-the-login-process",
+    "tags": [],
+    "uri": "e2e\\features\\login.feature",
+    "elements": [
+      {
+        "description": "  Verify that the values introduced by the user are correctly sent to the Authentication service.",
+        "id": "login---we-want-to-test-the-login-process;sc01.check-the-user-can-login-into-the-application",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "SC01.Check the user can login into the application",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1264
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user is in the Login page",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "the user set the username 'guest'",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 122
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user set the password 'guest123'",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 113
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "the user logs in the application",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 163
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user is redirected to the 'Welcome' page",
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 607
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\support\\hooks.js:10"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 98
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
