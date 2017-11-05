@@ -1,4 +1,4 @@
-# Angular4ProtractorCucumber
+# Angular 4 Protractor - Cucumber
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
 
@@ -21,6 +21,18 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+**Note**: Remember to start the server before to execute the e2e test (`ng serve`).
+
+You can also specify the name of the feature(s) you want to execute separately using the following command:
+
+`npm run e2e -- --features=playground,dashboard`
+
+### End-to-end tests - multiple capabilities
+
+If you desire to run e2e tests using multiple capabilites, you need to:
+1. npm run **start**: start the application server.
+2. npm run **webdriver:start**: start the selenium web driver server
+3. npm run **e2e:hub**: execute the test using multiple browsers and multiple capabilites.
 
 ## Further help
 
