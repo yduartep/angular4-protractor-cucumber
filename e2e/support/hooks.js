@@ -1,10 +1,9 @@
 "use strict";
 const Cucumber = require("cucumber");
 const {BeforeAll, After, Status} = require("cucumber");
-const conf = require("../config/config").config;
 
 BeforeAll({timeout: 10 * 1000}, function () {
-  return browser.get(conf.baseUrl);
+  return browser.get('http://localhost:4200');
 });
 
 After(function (scenario) {

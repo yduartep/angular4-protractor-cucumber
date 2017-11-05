@@ -40,6 +40,7 @@ export class LoginPage extends CommonPage {
    */
   setUsername(value: string) {
     return this.username.sendKeys(value);
+    // return this.setValue(this.username, value);
   }
 
   /**
@@ -49,6 +50,7 @@ export class LoginPage extends CommonPage {
    */
   setPassword(value: string) {
     return this.password.sendKeys(value);
+    // return this.setValue(this.password, value);
   }
 
   /**
@@ -64,7 +66,8 @@ export class LoginPage extends CommonPage {
    * @returns {any} the promise
    */
   logout() {
-    return browser.actions().sendKeys( Key.ENTER ).perform();
+    // return browser.actions().mouseMove(this.logoutLink).click().perform();
+    return this.logoutLink.click();
   }
 
   /**

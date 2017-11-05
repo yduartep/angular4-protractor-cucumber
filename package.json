@@ -8,7 +8,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "webdriver:clean": "webdriver-manager clean",
+    "webdriver:update": "webdriver-manager update",
+    "webdriver:start": "npm run webdriver:update && webdriver-manager start",
+    "e2e": "npm run webdriver:update && ng e2e",
+    "e2e:hub": "protractor protractor.hub.conf.js"
   },
   "private": true,
   "dependencies": {

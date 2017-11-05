@@ -1,47 +1,50 @@
-const chai = require('chai').use(require('chai-as-promised'));
-const path = require('path');
+// Protractor configuration file, see link for more information
+// https://github.com/angular/protractor/blob/master/lib/config.ts
+const argv = require('yargs').argv;
 const jsonReports = process.cwd() + '/reports/json';
 const Reporter = require('./e2e/support/reporter');
+const chai = require("chai");
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 exports.config = {
+  getPageTimeout: 60000,
+  allScriptsTimeout: 11000,
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
-  specs: ["./e2e/features/*.feature"],
-  // resultJsonOutputFile: './reports/json/protractor_report.json',
+  specs: getFeatureFiles(),
   onPrepare: function () {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
+    browser.ignoreSynchronization = true;
     browser.manage().window().maximize();
+    global.expect = chai.expect;
     Reporter.createDirectory(jsonReports);
   },
   cucumberOpts: {
     compiler: ['ts:ts-node/register'],
-    require: [  // require step definition files before executing features
-      path.resolve(process.cwd(), './e2e/stepDefinitions/**/*.steps.ts')
-    ],
+    monochrome: true,
     strict: true,
-    format: ['pretty'],   // specify the output format, optionally supply PATH to redirect formatter output (repeatable)
-    require: ['./e2e/stepDefinitions/*.ts', './e2e/support/*.ts'],
+    format: 'json:./reports/json/cucumber_report.json',
+    require: ['./e2e/**/*.e2e-spec.ts', './e2e/support/*.js'],
     dryRun: false,        // invoke every formatter without executing steps
-    tags: ["~@ignore"]    // only execute the features or scenarios with tags matching the expression
   },
   onComplete: function () {
     Reporter.createHTMLReport();
   },
-  allScriptsTimeout: 11000,
   disableChecks: true,
   useAllAngular2AppRoots: true
 };
 
 /**
- * Get the features files that need to be run based on an command line flag that
- * is passed, if nothing is passed all the features files are run
+ * Get the feature files that need to be run based on an command line flag that
+ * is passed, if nothing is passed all the feature files are run
  *
  * @example:
  *
  * <pre>
- *     // For 1 feature
+ *     // For 1 features
  *     npm run e2e -- --features=playground
  *
  *     // For multiple features
@@ -56,9 +59,10 @@ exports.config = {
 function getFeatureFiles() {
   const featureArgs = argv.features || process.env['features'] || '';
   if (featureArgs && featureArgs.trim().length > 0) {
-    console.log('... loading feature files by parameters.');
+    console.log('... loading feature files by parameters. features=' + featureArgs);
     return featureArgs.split(',').map(feature => `${process.cwd()}/e2e/features/${feature}.feature`);
+  } else {
+    console.log('... loading ALL feature files.');
+    return [`${process.cwd()}/e2e/features/*.feature`];
   }
-  console.log('... loading ALL feature files.');
-  return [`${process.cwd()}/e2e/features/*.feature`];
 }

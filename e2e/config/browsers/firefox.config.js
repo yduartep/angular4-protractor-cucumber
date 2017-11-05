@@ -6,6 +6,6 @@ function firefoxConfig() {
   return {
     browserName: 'firefox',
     shardTestFiles: true,
-    maxInstances: 5
+    maxInstances: 1
   };
 }

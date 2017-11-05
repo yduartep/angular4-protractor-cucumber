@@ -16,13 +16,15 @@ defineSupportCode(({Given, When, Then, After, Before}) => {
   });
 
   After(function (testCase, callback) {
-    page.logout().then(() => {
-      callback();
+    browser.wait(() => ExpectedConditions.presenceOf(page.logoutLink), 3000, 'waiting').then(() => {
+      page.logout().then(() => {
+        callback();
+      });
     });
   });
 
   Given(/^the user is in the Login page$/, (done: any) => {
-    browser.wait(() => ExpectedConditions.presenceOf(page.getElementRequired()), 5000, 'waiting').then(() => {
+    browser.wait(() => ExpectedConditions.presenceOf(page.getElementRequired()), 3000, 'waiting').then(() => {
       done();
     });
   });

@@ -14,7 +14,7 @@ function chromeConfig() {
         }
       }
     },
-    shardTestFiles: true,
-    maxInstances: 5
+    shardTestFiles: true,  // remove this property in order to debug
+    maxInstances: 1
   };
 }

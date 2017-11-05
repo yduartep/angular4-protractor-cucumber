@@ -28,8 +28,10 @@ class Reporter {
     }
   }
 
+  /**
+   * Create an html report output
+   */
   static createHTMLReport() {
-
     try {
       reporter.generate(cucumberReporteroptions); //invoke cucumber-html-reporter
       report
@@ -57,7 +59,6 @@ class Reporter {
    * Allure reports method, would work only with cucumber 1.3.x & less versions
    * Currently incompatible with latest cucumber 3.x version
    */
-
   static createAllureXML() {
     const allureReporter = require("cucumberjs-allure-reporter");
     const xmlReports = process.cwd() + "/reports/xml";
