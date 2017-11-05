@@ -10,7 +10,15 @@ config.baseUrl = 'http://localhost:4200/';
 config.seleniumAddress = 'http://localhost:4444/wd/hub/';
 
 config.multiCapabilities = [
+  chrome,
   firefox
 ];
+
+/**
+ * multiple browser in parallel doesn't works
+ * because some browser lost the focus and the tests fails
+ * so set the number of browsers can run in parallel to just 1
+ */
+config.maxSessions = 1;
 
 exports.config = config;

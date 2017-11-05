@@ -7,21 +7,7 @@ import {WelcomePage} from '../../pages/welcome.po';
 
 const page = new LoginPage();
 
-defineSupportCode(({Given, When, Then, After, Before}) => {
-
-  Before(function (testCase, callback) {
-    page.navigateTo().then(() => {
-      callback();
-    });
-  });
-
-  After(function (testCase, callback) {
-    browser.wait(() => ExpectedConditions.presenceOf(page.logoutLink), 3000, 'waiting').then(() => {
-      page.logout().then(() => {
-        callback();
-      });
-    });
-  });
+defineSupportCode(({Given, When, Then}) => {
 
   Given(/^the user is in the Login page$/, (done: any) => {
     browser.wait(() => ExpectedConditions.presenceOf(page.getElementRequired()), 3000, 'waiting').then(() => {

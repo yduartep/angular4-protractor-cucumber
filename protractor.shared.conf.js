@@ -9,7 +9,6 @@ chai.use(chaiAsPromised);
 
 exports.config = {
   getPageTimeout: 60000,
-  allScriptsTimeout: 11000,
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   specs: getFeatureFiles(),
@@ -33,6 +32,7 @@ exports.config = {
   onComplete: function () {
     Reporter.createHTMLReport();
   },
+  allScriptsTimeout: 11000,
   disableChecks: true,
   useAllAngular2AppRoots: true
 };

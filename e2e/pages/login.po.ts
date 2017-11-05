@@ -1,6 +1,5 @@
 import {browser, by, element} from 'protractor';
-import {CommonPage} from './commo.po';
-import {Key} from "selenium-webdriver";
+import {CommonPage} from './common.po';
 
 export class LoginPage extends CommonPage {
 
@@ -8,7 +7,6 @@ export class LoginPage extends CommonPage {
   readonly username = element(by.id('username'));
   readonly password = element(by.id('password'));
   readonly loginButton = element(by.id('btnLogin'));
-  readonly logoutLink = element(by.id('linkLogout'));
   readonly pathUrl = '/login';
 
   getElementRequired() {
@@ -39,8 +37,7 @@ export class LoginPage extends CommonPage {
    * @returns {any} the promise
    */
   setUsername(value: string) {
-    return this.username.sendKeys(value);
-    // return this.setValue(this.username, value);
+    return this.setValue(this.username, value);
   }
 
   /**
@@ -49,8 +46,7 @@ export class LoginPage extends CommonPage {
    * @returns {any} the promise
    */
   setPassword(value: string) {
-    return this.password.sendKeys(value);
-    // return this.setValue(this.password, value);
+    return this.setValue(this.password, value);
   }
 
   /**
@@ -62,19 +58,10 @@ export class LoginPage extends CommonPage {
   }
 
   /**
-   * Logout action
-   * @returns {any} the promise
-   */
-  logout() {
-    // return browser.actions().mouseMove(this.logoutLink).click().perform();
-    return this.logoutLink.click();
-  }
-
-  /**
    * Go to the login page
    * @returns {wdpromise.Promise<any>} the promise
    */
   navigateTo() {
-    return browser.get('http://localhost:4200' + this.pathUrl);
+    return browser.get(this.pathUrl);
   }
 }
