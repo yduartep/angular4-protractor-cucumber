@@ -1,5 +1,6 @@
 import {browser, by, element} from 'protractor';
 import {CommonPage} from './commo.po';
+import {Key} from "selenium-webdriver";
 
 export class LoginPage extends CommonPage {
 
@@ -8,7 +9,7 @@ export class LoginPage extends CommonPage {
   readonly password = element(by.id('password'));
   readonly loginButton = element(by.id('btnLogin'));
   readonly logoutLink = element(by.id('linkLogout'));
-  readonly pathUrl = '/#/login';
+  readonly pathUrl = '/login';
 
   getElementRequired() {
     return element(by.id('loginContent'));
@@ -63,7 +64,7 @@ export class LoginPage extends CommonPage {
    * @returns {any} the promise
    */
   logout() {
-    return this.logoutLink.click();
+    return browser.actions().sendKeys( Key.ENTER ).perform();
   }
 
   /**
@@ -71,6 +72,6 @@ export class LoginPage extends CommonPage {
    * @returns {wdpromise.Promise<any>} the promise
    */
   navigateTo() {
-    return browser.get('http://localhost:4200/' + this.pathUrl);
+    return browser.get('http://localhost:4200' + this.pathUrl);
   }
 }

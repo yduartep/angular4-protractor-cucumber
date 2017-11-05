@@ -24,7 +24,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1344
+              "duration": 1439
             }
           },
           {
@@ -50,7 +50,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 125
+              "duration": 195
             }
           },
           {
@@ -63,7 +63,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 118
+              "duration": 125
             }
           },
           {
@@ -76,7 +76,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 182
+              "duration": 218
             }
           },
           {
@@ -89,7 +89,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 600
+              "duration": 616
             }
           },
           {
@@ -99,8 +99,7 @@
               "location": "e2e\\support\\hooks.js:10"
             },
             "result": {
-              "status": "passed",
-              "duration": 1
+              "status": "passed"
             }
           },
           {
@@ -111,7 +110,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 128
+              "duration": 7
             }
           }
         ]

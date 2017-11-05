@@ -8,10 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "protractor": "protractor protractor.conf.js",
-    "webdriver-start": "webdriver-manager start",
-    "webdriver-update": "webdriver-manager update"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +55,7 @@
     "protractor-cucumber-framework": "^4.0.9",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.3.3"
+    "typescript": "~2.3.3",
+    "yargs": "^10.0.3"
   }
 }

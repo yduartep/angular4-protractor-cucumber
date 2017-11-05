@@ -35,17 +35,17 @@ exports.config = {
 };
 
 /**
- * Get the feature files that need to be run based on an command line flag that
- * is passed, if nothing is passed all the feature files are run
+ * Get the features files that need to be run based on an command line flag that
+ * is passed, if nothing is passed all the features files are run
  *
  * @example:
  *
  * <pre>
  *     // For 1 feature
- *     npm run e2e -- --feature=playground
+ *     npm run e2e -- --features=playground
  *
  *     // For multiple features
- *     npm run e2e -- --feature=playground,dashboard,...
+ *     npm run e2e -- --features=playground,dashboard,...
  *
  *     // Else
  *     npm run e2e
@@ -54,7 +54,7 @@ exports.config = {
  * @return {Array<string>}
  */
 function getFeatureFiles() {
-  const featureArgs = argv.feature || process.env['feature'] || '';
+  const featureArgs = argv.features || process.env['features'] || '';
   if (featureArgs && featureArgs.trim().length > 0) {
     console.log('... loading feature files by parameters.');
     return featureArgs.split(',').map(feature => `${process.cwd()}/e2e/features/${feature}.feature`);
