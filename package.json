@@ -8,7 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e --no-serve",
+    "e2e": "ng e2e",
     "protractor": "protractor protractor.conf.js",
     "webdriver-start": "webdriver-manager start",
     "webdriver-update": "webdriver-manager update"

@@ -20,11 +20,11 @@
             "keyword": "Before",
             "hidden": true,
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:15"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:11"
             },
             "result": {
               "status": "passed",
-              "duration": 1264
+              "duration": 1344
             }
           },
           {
@@ -33,11 +33,11 @@
             "line": 5,
             "name": "the user is in the Login page",
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:25"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:21"
             },
             "result": {
               "status": "passed",
-              "duration": 5
+              "duration": 4
             }
           },
           {
@@ -46,11 +46,11 @@
             "line": 6,
             "name": "the user set the username 'guest'",
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:30"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:26"
             },
             "result": {
               "status": "passed",
-              "duration": 122
+              "duration": 125
             }
           },
           {
@@ -59,11 +59,11 @@
             "line": 7,
             "name": "the user set the password 'guest123'",
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:33"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:29"
             },
             "result": {
               "status": "passed",
-              "duration": 113
+              "duration": 118
             }
           },
           {
@@ -72,11 +72,11 @@
             "line": 8,
             "name": "the user logs in the application",
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:36"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:32"
             },
             "result": {
               "status": "passed",
-              "duration": 163
+              "duration": 182
             }
           },
           {
@@ -85,11 +85,11 @@
             "line": 9,
             "name": "the user is redirected to the 'Welcome' page",
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:43"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:39"
             },
             "result": {
               "status": "passed",
-              "duration": 607
+              "duration": 600
             }
           },
           {
@@ -99,18 +99,19 @@
               "location": "e2e\\support\\hooks.js:10"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:20"
+              "location": "e2e\\features\\step_definitions\\login.e2e-spec.ts:16"
             },
             "result": {
               "status": "passed",
-              "duration": 98
+              "duration": 128
             }
           }
         ]
