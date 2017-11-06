@@ -1,7 +1,22 @@
 {
   "name": "angular4-protractor-cucumber",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
+  "description": "Protractor - Cucumber - Selenium integration with Angular 4",
+  "repository": {
+    "url": "https://github.com/yduartep/angular4-protractor-cucumber"
+  },
+  "keywords": [
+    "angular-cli",
+    "angular",
+    "angular 4",
+    "protractor",
+    "cucumber",
+    "selenium",
+    "testing",
+    "e2e"
+  ],
+  "author": "Yahima Duarte <layahi@gmail.com>",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +24,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "webdriver:clean": "webdriver-manager clean",
-    "webdriver:update": "webdriver-manager update",
+    "webdriver:update": "webdriver-manager update --ignore_ssl --gecko false",
     "webdriver:start": "npm run webdriver:update && webdriver-manager start",
     "e2e": "npm run webdriver:update && ng e2e",
     "e2e:hub": "protractor protractor.hub.conf.js"
