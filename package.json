@@ -24,12 +24,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "webdriver:clean": "webdriver-manager clean",
-    "webdriver:update": "webdriver-manager update --ignore_ssl --gecko false",
+    "webdriver:update": "webdriver-manager update",
     "webdriver:start": "npm run webdriver:update && webdriver-manager start",
     "e2e": "npm run webdriver:update && ng e2e",
     "e2e:hub": "protractor protractor.hub.conf.js"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
