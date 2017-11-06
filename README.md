@@ -2,13 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
 
+# Get the Code
+```
+git clone https://github.com/yduartep/angular4-protractor-cucumber.git
+cd angular4-protractor-cucumber
+npm i
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -27,13 +30,12 @@ You can also specify the name of the feature(s) you want to execute separately u
 
 `npm run e2e -- --features=playground,dashboard`
 
-### End-to-end tests - multiple capabilities
+### E2E tests - multiple capabilities
 
 If you desire to run e2e tests using multiple capabilites, you need to:
 1. npm run **start**: start the application server.
 2. npm run **webdriver:start**: start the selenium web driver server
-3. npm run **e2e:hub**: execute the test using multiple browsers and multiple capabilites.
+3. npm run **e2e:hub**: execute the tests using multiple browsers on different versions and/or different operating system.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Cucumber report
+After execute the e2e tests, some html and json reports are generated in the forlder **reports**.
