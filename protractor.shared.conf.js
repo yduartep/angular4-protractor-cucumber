@@ -3,9 +3,6 @@
 const argv = require('yargs').argv;
 const jsonReports = process.cwd() + '/reports/json';
 const Reporter = require('./e2e/support/reporter');
-const chai = require("chai");
-const chaiAsPromised = require("chai-as-promised");
-chai.use(chaiAsPromised);
 
 exports.config = {
   getPageTimeout: 60000,
@@ -16,10 +13,9 @@ exports.config = {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
-    browser.ignoreSynchronization = true;
     browser.manage().window().maximize();
-    global.expect = chai.expect;
     Reporter.createDirectory(jsonReports);
+    browser.waitForAngular();
   },
   cucumberOpts: {
     compiler: ['ts:ts-node/register'],

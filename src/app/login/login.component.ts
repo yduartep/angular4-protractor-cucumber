@@ -32,16 +32,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.focusOnUsername.emit(true);
   }
 
+  /**
+   * Login using the username and password filled
+   */
   login() {
     this.loading = true;
     this.authenticationService.login(this.model.username, this.model.password)
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+      .subscribe(data => {
+        this.router.navigate([this.returnUrl]);
+      }, error => {
+        this.alertService.error(error);
+        this.loading = false;
+      });
   }
 }
