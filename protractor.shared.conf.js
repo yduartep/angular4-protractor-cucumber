@@ -14,6 +14,11 @@ exports.config = {
       project: 'e2e/tsconfig.e2e.json'
     });
     browser.manage().window().maximize();
+	
+	// implicit and page load timeouts
+    browser.manage().timeouts().pageLoadTimeout(40000);
+    browser.manage().timeouts().implicitlyWait(25000);
+	
     Reporter.createDirectory(jsonReports);
   },
   cucumberOpts: {

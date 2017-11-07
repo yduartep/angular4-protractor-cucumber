@@ -75,10 +75,9 @@ defineSupportCode(({Given, When, Then}) => {
     browser.wait(function () {
       return welcome.getElementRequired().isPresent();
     }, 5000).then(function () {
-      expect(welcome.title).to.equals('Welcome Guest!');
-      done();
+	  expect(welcome.title.getText()).to.be.eventually.equal('Welcome Guest!');
+	  done();
     });
-    return welcome.getElementRequired().isPresent();
   });
 
   Then(/^a cookie with name '([^']*)' is created with the value '([^']*)'$/, (cookieId: string, cookieValue: string, done: any) => {
@@ -87,7 +86,7 @@ defineSupportCode(({Given, When, Then}) => {
     }, 5000).then(function () {
       browser.manage().getCookie(cookieId).then(cookie => {
         expect(cookie.value).to.equals(cookieValue);
-        done();
+		done();
       });
     });
   });
