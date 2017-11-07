@@ -6,7 +6,7 @@ const {Cucumber, BeforeAll, After, Status} = require("cucumber");
  * Go the angular starter page before to start eah test
  */
 BeforeAll({timeout: 30 * 1000}, function (callback) {
-  return browser.get('http://localhost:4200').then(()=> {
+  browser.get('http://localhost:4200').then(()=> {
     callback();
   });
 });
@@ -14,7 +14,7 @@ BeforeAll({timeout: 30 * 1000}, function (callback) {
 /**
  * Logout after finish the execution of each test to start from initial application state
  */
-After(function (scenario, callback) {
+After(function (scenario) {
   if (scenario.result.status === Status.FAILED) {
     const attach = this.attach; // cucumber's world object has attach function which should be used
     return browser.takeScreenshot().then(function (png) {
@@ -24,9 +24,7 @@ After(function (scenario, callback) {
   }
   else {
     // logout before to start the next test
-    element(by.id('linkLogout')).click().then(() => {
-      callback();
-    });
+    return element(by.id('linkLogout')).click();
   }
 });
 

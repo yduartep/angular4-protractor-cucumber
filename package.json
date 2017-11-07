@@ -26,7 +26,7 @@
     "webdriver:clean": "webdriver-manager clean",
     "webdriver:update": "webdriver-manager update",
     "webdriver:start": "webdriver-manager start",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --webdriver-update",
     "e2e:hub": "protractor protractor.hub.conf.js"
   },
   "private": false,

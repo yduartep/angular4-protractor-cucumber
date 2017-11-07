@@ -15,7 +15,6 @@ exports.config = {
     });
     browser.manage().window().maximize();
     Reporter.createDirectory(jsonReports);
-    browser.waitForAngular();
   },
   cucumberOpts: {
     compiler: ['ts:ts-node/register'],
@@ -28,7 +27,7 @@ exports.config = {
   onComplete: function () {
     Reporter.createHTMLReport();
   },
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 60000,
   disableChecks: true,
   useAllAngular2AppRoots: true
 };
