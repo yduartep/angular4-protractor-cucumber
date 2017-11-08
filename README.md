@@ -51,5 +51,8 @@ If you desire to run e2e tests using multiple capabilites, you need to:
 ## Cucumber report
 After execute the e2e tests, some html and json reports are generated in the forlder **reports**.
 
+- This report is generated in the file /reports/html/**cucumber_report.html**:
 ![Cucumber Report](https://github.com/yduartep/angular4-protractor-cucumber/blob/master/docs/cucumber_report.PNG)
+
+- This report is generated in the file /reports/html/**cucumber_reporter.html**:
 ![Cucumber Reporter](https://github.com/yduartep/angular4-protractor-cucumber/blob/master/docs/cucumber_reporter.PNG)
