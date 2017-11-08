@@ -3,6 +3,8 @@
 Protractor - Cucumber - Selenium integration using a Login page as a DEMO on Angular 4.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
 
+![Cucumber Reporter](https://github.com/yduartep/angular4-protractor-cucumber/blob/master/docs/e2e%20-%20demo.gif)
+
 # Get the Code
 ```
 git clone https://github.com/yduartep/angular4-protractor-cucumber.git
@@ -60,7 +62,7 @@ After execute the e2e tests, some html and json reports are generated in the for
 ![Cucumber Reporter](https://github.com/yduartep/angular4-protractor-cucumber/blob/master/docs/cucumber_reporter.PNG)
 
 ## E2E - Project Structure
-- protractor.conf.js: contains the protractor configuration used by angular-cli to execute the e2e tests throught the command `ng e2e` using chrome as browser by default.
+- **protractor.conf.js**: contains the protractor configuration used by angular-cli to execute the e2e tests throught the command `ng e2e` using chrome as browser by default.
 
 - **protractor.shared.conf.js**: contains the shared configuration between all kinds of tests execution that use protractor.
 
