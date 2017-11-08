@@ -5,29 +5,28 @@ const jsonReports = process.cwd() + '/reports/json';
 const Reporter = require('./e2e/support/reporter');
 
 exports.config = {
-  getPageTimeout: 60000,
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   specs: getFeatureFiles(),
+  cucumberOpts: {
+    compiler: ['ts:ts-node/register'],
+    require: ['./e2e/**/*.e2e-spec.ts', './e2e/support/*.js'],
+    strict: true,         // <boolean> fail if there are any undefined or pending steps
+    format: 'json:./reports/json/cucumber_report.json',
+    dryRun: false,        // <boolean> invoke every formatter without executing steps
+    tags: ["~@ignore"],   // <string[]> (expression) only execute the features or scenarios with tags matching the expression
+  },
   onPrepare: function () {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
     browser.manage().window().maximize();
-	
-	// implicit and page load timeouts
+
+    // implicit and page load timeouts
     browser.manage().timeouts().pageLoadTimeout(40000);
     browser.manage().timeouts().implicitlyWait(25000);
-	
+
     Reporter.createDirectory(jsonReports);
-  },
-  cucumberOpts: {
-    compiler: ['ts:ts-node/register'],
-    monochrome: true,
-    strict: true,
-    format: 'json:./reports/json/cucumber_report.json',
-    require: ['./e2e/**/*.e2e-spec.ts', './e2e/support/*.js'],
-    dryRun: false,        // invoke every formatter without executing steps
   },
   onComplete: function () {
     Reporter.createHTMLReport();
