@@ -14,7 +14,8 @@
     "cucumber",
     "selenium",
     "testing",
-    "e2e"
+    "e2e",
+    "typescript"
   ],
   "author": "Yahima Duarte <layahi@gmail.com>",
   "scripts": {
