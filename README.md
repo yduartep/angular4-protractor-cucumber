@@ -52,7 +52,30 @@ If you desire to run e2e tests using multiple capabilites, you need to:
 After execute the e2e tests, some html and json reports are generated in the forlder **reports**.
 
 - This report is generated in the file /reports/html/**cucumber_report.html**:
+
 ![Cucumber Report](https://github.com/yduartep/angular4-protractor-cucumber/blob/master/docs/cucumber_report.PNG)
 
 - This report is generated in the file /reports/html/**cucumber_reporter.html**:
+
 ![Cucumber Reporter](https://github.com/yduartep/angular4-protractor-cucumber/blob/master/docs/cucumber_reporter.PNG)
+
+## E2E - Project Structure
+- protractor.conf.js: contains the protractor configuration used by angular-cli to execute the e2e tests throught the command `ng e2e` using chrome as browser by default.
+
+- **protractor.shared.conf.js**: contains the shared configuration between all kinds of tests execution that use protractor.
+
+- **protractor.hub.conf.js**: contains the configuration necessary to execute e2e test using multicapabilites.
+
+- **e2e/config/browsers**: contains all the browser's configuration necessary to execute the tests.
+
+- **e2e/config/helpers/chai-imports.ts**: This file is used to avoid repeating the import of chai library in any step.
+
+- **e2e/features/step_definitions**: contains the steps to execute. The name must end always with **.e2e-spec.ts**.
+
+- **e2e/features**: contains the gherkins definitions in **.feature** files.
+
+- **e2e/pages**: Contains the page objects where are encapsulating the functionalities.
+
+- **e2e/support/hooks.js** - used for setup and teardown the environment before and after each scenario.
+
+- **e2e/support/reporter.js** - Is a class used to define the diferent formats that can be generated in report.
