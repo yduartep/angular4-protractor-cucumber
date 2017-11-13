@@ -1,7 +1,4 @@
-import {isNullOrUndefined} from 'util';
-
-const {defineSupportCode} = require('cucumber');
-import {browser, by, element, ExpectedConditions} from 'protractor';
+import {browser} from 'protractor';
 import {expect} from '../../config/helpers/chai-imports';
 
 // pages
@@ -10,51 +7,30 @@ import {WelcomePage} from '../../pages/welcome.po';
 
 const page = new LoginPage();
 const welcome = new WelcomePage();
+const {defineSupportCode} = require('cucumber');
 
 defineSupportCode(({Given, When, Then}) => {
 
   Given(/^the user is in the Login page$/, (done: any) => {
-    browser.wait(function () {
-      return page.getElementRequired().isPresent();
-    }, 5000).then(function () {
+    browser.wait(page.getElementRequired().isPresent(), 5000).then(() => {
       done();
     });
   });
 
-  Given(/^the user set the username '([^']*)'$/, (userId: string, done: any) => {
-    browser.wait(function () {
-      return page.username.isPresent();
-    }, 5000).then(function () {
-      page.setUsername(userId).then(function () {
-        done();
-      });
-    });
+  Given(/^the user set the username '([^']*)'$/, (userId: string) => {
+    return page.setUsername(userId);
   });
 
-  Given(/^the user set the password '([^']*)'$/, (password: string, done: any) => {
-    browser.wait(function () {
-      return page.password.isPresent();
-    }, 5000).then(function () {
-      page.setPassword(password).then(function () {
-        done();
-      });
-    });
+  Given(/^the user set the password '([^']*)'$/, (password: string) => {
+    return page.setPassword(password);
   });
 
-  When(/^the user logs in the application$/, (done: any) => {
-    browser.wait(function () {
-      return page.loginButton.isPresent();
-    }, 5000).then(function () {
-      page.submit().then(function () {
-        done();
-      });
-    });
+  When(/^the user logs in the application$/, () => {
+    return page.submit();
   });
 
   Then(/^the user is redirected to the Welcome page$/, (done: any) => {
-    browser.wait(function () {
-      return welcome.getElementRequired().isPresent();
-    }, 5000).then(function () {
+    browser.wait(welcome.getElementRequired().isPresent(), 5000).then(() => {
       expect(welcome.title.getText()).to.be.eventually.equal('Welcome Guest!');
       done();
     });
