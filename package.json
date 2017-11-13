@@ -25,8 +25,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "webdriver:clean": "webdriver-manager clean",
-    "webdriver:update": "webdriver-manager update",
-    "webdriver:start": "webdriver-manager start",
+    "webdriver:update": "webdriver-manager update --chrome --ie --gecko",
+    "webdriver:start": "webdriver-manager start --detach",
+    "webdriver:stop": "webdriver-manager shutdown",
     "e2e": "ng e2e --webdriver-update=false",
     "e2e:hub": "protractor protractor.hub.conf.js"
   },
@@ -76,5 +77,8 @@
     "tslint": "~5.7.0",
     "typescript": "~2.3.3",
     "yargs": "^10.0.3"
+  },
+  "engines": {
+    "npm": "5.3.0"
   }
 }

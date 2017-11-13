@@ -15,6 +15,7 @@ function chromeConfig() {
       }
     },
     shardTestFiles: true,
-    maxInstances: 5
+    maxInstances: 5,
+    requireWindowFocus: false
   };
 }
