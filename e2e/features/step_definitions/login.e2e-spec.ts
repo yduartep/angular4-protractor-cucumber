@@ -35,4 +35,14 @@ defineSupportCode(({Given, When, Then}) => {
       done();
     });
   });
+
+  Then(/^a cookie with name '([^']*)' is created with the value '([^']*)'$/, (cookieId: string, cookieValue: string, done: any) => {
+    browser.wait(welcome.getElementRequired().isPresent(), 5000).then(() => {
+      browser.manage().getCookie(cookieId).then(cookie => {
+        expect(cookie.name).to.equals(cookieId);
+        expect(cookie.value).to.equals(cookieValue);
+        done();
+      });
+    });
+  });
 });
