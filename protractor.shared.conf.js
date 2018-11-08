@@ -20,7 +20,7 @@ exports.config = {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
-    browser.manage().window().maximize();
+    //browser.manage().window().maximize();
 
     // implicit and page load timeouts
     browser.manage().timeouts().pageLoadTimeout(40000);

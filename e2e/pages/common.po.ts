@@ -12,7 +12,7 @@ export abstract class CommonPage {
    * @param value the value
    * @returns {ActionSequence | promise.Promise<void>}
    */
-  setValue(element, value) {
+  setValue(element, value): Promise<void> {
     // return browser.actions().mouseMove(element).click().sendKeys(value).perform();
     return element.sendKeys(value);
   }

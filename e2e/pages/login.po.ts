@@ -20,15 +20,13 @@ export class LoginPage extends CommonPage {
    * @param done the callback function
    * @returns {Promise<any[]>}
    */
-  login(username: string = 'guest', password: string = 'guest123', done: any) {
+  login(username: string = 'guest', password: string = 'guest123', done: any): Promise<any> {
     const usernameValue = this.setUsername(username);
     const passwordValue = this.setPassword(password);
     const promises = [usernameValue, passwordValue];
-    return Promise.all(promises).then(result => {
-      return this.submit().then(() => {
-        done();
-      });
-    });
+    return Promise.all(promises)
+      .then(() => this.submit() as PromiseLike<void>)
+      .then(() => done());
   }
 
   /**
